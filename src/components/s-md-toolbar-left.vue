@@ -1,18 +1,24 @@
 <template>
     <div class="left">
         <button :disabled="!editable" type="button" v-if="toolbars.bold" @click="$clicks('bold')"
-                class="op-icon fas fa-bold" aria-hidden="true"
-                :title="`${d_words.tl_bold} (ctrl+b)`"></button>
+                class="op-icon" aria-hidden="true"
+                :title="`${d_words.tl_bold} (ctrl+b)`">
+                <i class="fas fa-bold"></i>
+                </button>
         <button :disabled="!editable" type="button" v-if="toolbars.italic" @click="$clicks('italic')"
-                class="op-icon fas fa-italic" aria-hidden="true"
-                :title="`${d_words.tl_italic} (ctrl+i)`"></button>
+                class="op-icon" aria-hidden="true"
+                :title="`${d_words.tl_italic} (ctrl+i)`">
+                <i class="fas fa-italic"></i>
+                </button>
         <button :disabled="!editable" type="button" v-if="toolbars.header" @click="$clicks('header')"
                 class="op-icon fas fa-heading" aria-hidden="true"
                 :title="`${d_words.tl_header} (ctrl+h)`"></button>
         <span v-if="toolbars.header || toolbars.italic || toolbars.bold" class="op-icon-divider"></span>
         <button :disabled="!editable" type="button" v-if="toolbars.underline" @click="$clicks('underline')"
-                class="op-icon fas fa-underline"
-                :title="`${d_words.tl_underline} (ctrl+u)`" aria-hidden="true"></button>
+                class="op-icon"
+                :title="`${d_words.tl_underline} (ctrl+u)`" aria-hidden="true">
+                <i class="fas fa-underline"></i>
+                </button>
         <button :disabled="!editable" type="button" v-if="toolbars.strikethrough" @click="$clicks('strikethrough')"
                 class="op-icon fas fa-strikethrough"
                 :title="`${d_words.tl_strikethrough} (ctrl+d)`" aria-hidden="true"></button>
