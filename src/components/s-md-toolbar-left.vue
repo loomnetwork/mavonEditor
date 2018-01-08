@@ -1,20 +1,20 @@
 <template>
     <div class="left">
         <button :disabled="!editable" type="button" v-if="toolbars.bold" @click="$clicks('bold')"
-                class="op-icon fa fa-mavon-bold" aria-hidden="true"
+                class="op-icon fas fa-bold" aria-hidden="true"
                 :title="`${d_words.tl_bold} (ctrl+b)`"></button>
         <button :disabled="!editable" type="button" v-if="toolbars.italic" @click="$clicks('italic')"
-                class="op-icon fa fa-mavon-italic" aria-hidden="true"
+                class="op-icon fas fa-italic" aria-hidden="true"
                 :title="`${d_words.tl_italic} (ctrl+i)`"></button>
         <button :disabled="!editable" type="button" v-if="toolbars.header" @click="$clicks('header')"
-                class="op-icon fa fa-mavon-header" aria-hidden="true"
+                class="op-icon fas fa-heading" aria-hidden="true"
                 :title="`${d_words.tl_header} (ctrl+h)`"></button>
         <span v-if="toolbars.header || toolbars.italic || toolbars.bold" class="op-icon-divider"></span>
         <button :disabled="!editable" type="button" v-if="toolbars.underline" @click="$clicks('underline')"
-                class="op-icon fa fa-mavon-underline"
+                class="op-icon fas fa-underline"
                 :title="`${d_words.tl_underline} (ctrl+u)`" aria-hidden="true"></button>
         <button :disabled="!editable" type="button" v-if="toolbars.strikethrough" @click="$clicks('strikethrough')"
-                class="op-icon fa fa-mavon-strikethrough"
+                class="op-icon fas fa-strikethrough"
                 :title="`${d_words.tl_strikethrough} (ctrl+d)`" aria-hidden="true"></button>
         <button :disabled="!editable" type="button" v-if="toolbars.mark" @click="$clicks('mark')"
                 class="op-icon fa fa-mavon-thumb-tack" :title="`${d_words.tl_mark} (ctrl+m)`"
@@ -39,17 +39,17 @@
                 v-if="toolbars.superscript || toolbars.subscript || toolbars.underline || toolbars.strikethrough || toolbars.mark"
                 class="op-icon-divider"></span>
         <button :disabled="!editable" type="button" v-if="toolbars.quote" @click="$clicks('quote')"
-                class="op-icon fa fa-mavon-quote-left" aria-hidden="true"
+                class="op-icon fas fa-quote-left" aria-hidden="true"
                 :title="`${d_words.tl_quote} (ctrl+q)`"></button>
         <button :disabled="!editable" type="button" v-if="toolbars.ol" @click="$clicks('ol')"
-                class="op-icon fa fa-mavon-list-ol" aria-hidden="true"
+                class="op-icon fas fa-list-ol" aria-hidden="true"
                 :title="`${d_words.tl_ol} (ctrl+o)`"></button>
         <button :disabled="!editable" type="button" v-if="toolbars.ul" @click="$clicks('ul')"
-                class="op-icon fa fa-mavon-list-ul" aria-hidden="true"
+                class="op-icon fas fa-list-ul" aria-hidden="true"
                 :title="`${d_words.tl_ul} (ctrl+alt+u)`"></button>
         <span v-if="toolbars.ul || toolbars.ol || toolbars.quote" class="op-icon-divider"></span>
         <button :disabled="!editable" type="button" v-if="toolbars.link" @click.stop="$toggle_imgLinkAdd('link')"
-                class="op-icon fa fa-mavon-link" aria-hidden="true"
+                class="op-icon fas fa-link" aria-hidden="true"
                 :title="`${d_words.tl_link} (ctrl+l)`"></button>
         <div :disabled="!editable" :class="{'selected': s_img_dropdown_open}" type="button" v-if="toolbars.imagelink" @click.stop="$click_toggle_image_dropdown()"
                 class="op-icon fa fa-mavon-picture-o dropdown"
@@ -72,10 +72,10 @@
             </div>
         </div>
         <button :disabled="!editable" type="button" v-if="toolbars.code" @click="$clicks('code')"
-                class="op-icon fa fa-mavon-code" aria-hidden="true"
+                class="op-icon fas fa-code" aria-hidden="true"
                 :title="`${d_words.tl_code} (ctrl+alt+c)`"></button>
         <button :disabled="!editable" type="button" v-if="toolbars.table" @click="$clicks('table')"
-                class="op-icon fa fa-mavon-table" aria-hidden="true"
+                class="op-icon fas fa-table" aria-hidden="true"
                 :title="`${d_words.tl_table} (ctrl+alt+t)`"></button>
         <span v-if="toolbars.link || toolbars.imagelink || toolbars.code || toolbars.table"
               class="op-icon-divider"></span>
