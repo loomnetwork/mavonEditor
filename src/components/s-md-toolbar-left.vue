@@ -52,8 +52,9 @@
                 class="op-icon"
                 :title="`${d_words.tl_link} (ctrl+l)`"><i class="fas fa-link"></i></button>
         <div :disabled="!editable" :class="{'selected': s_img_dropdown_open}" type="button" v-if="toolbars.imagelink" @click.stop="$click_toggle_image_dropdown()"
-                class="op-icon fa fa-mavon-picture-o dropdown"
+                class="op-icon dropdown"
                 aria-hidden="true">
+            <i class="fas fa-image"></i>
             <div  class="op-image popup-dropdown" v-show="s_img_dropdown_open">
                 <div  class="dropdown-item" @click.stop="$toggle_imgLinkAdd('imagelink')" title="ctrl+alt+l"><span>{{d_words.tl_image}}</span></div>
                 <div class="dropdown-item" style="overflow: hidden">
