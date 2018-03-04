@@ -51,10 +51,10 @@
         <button :disabled="!editable" type="button" v-if="toolbars.link" @click.stop="$toggle_imgLinkAdd('link')"
                 class="op-icon"
                 :title="`${d_words.tl_link} (ctrl+l)`"><i class="fas fa-link"></i></button>
-        <div :disabled="!editable" :class="{'selected': s_img_dropdown_open}" type="button" v-if="toolbars.imagelink" @click.stop="$click_toggle_image_dropdown()"
-                class="op-icon dropdown"
-                aria-hidden="true">
-            <i class="fas fa-image"></i>
+        <button :disabled="!editable"
+                :class="{'selected': s_img_dropdown_open}"
+                type="button" v-if="toolbars.imagelink"
+                @click.stop="$click_toggle_image_dropdown()"><i class="fas fa-image"></i></button>
             <div  class="op-image popup-dropdown" v-show="s_img_dropdown_open">
                 <div  class="dropdown-item" @click.stop="$toggle_imgLinkAdd('imagelink')" title="ctrl+alt+l"><span>{{d_words.tl_image}}</span></div>
                 <div class="dropdown-item" style="overflow: hidden">
@@ -63,15 +63,13 @@
 
                 <div class="dropdown-item dropdown-images" v-if="index > 0" v-for="(item, index) in img_file" @click.stop="$imgFileListClick(index)">
                     <span>{{item[0]}}</span>
-                    <button slot="right" type="button" @click.stop="$imgDel(index)"
-                            class="op-icon fa fa-mavon-trash-o" aria-hidden="true"
+                    <button slot="right" type="button" @click.stop="$imgDel(index)" aria-hidden="true"
                             :title="d_words.tl_upload_remove"></button>
-                    <!-- 缩略图展示 -->
                     <img class = "image-show" :src="item[1].miniurl" alt="none">
                 </div>
 
             </div>
-        </div>
+
         <button :disabled="!editable" type="button" v-if="toolbars.code" @click="$clicks('code')"
                 class="op-icon"
                 :title="`${d_words.tl_code} (ctrl+alt+c)`"><i class="fas fa-code"></i></button>
