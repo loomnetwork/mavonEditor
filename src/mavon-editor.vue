@@ -99,7 +99,6 @@
     import {toolbar_right_click} from './lib/toolbar_right_click.js'
     import {CONFIG} from './lib/config.js'
     import hljs from './lib/core/highlight.js'
-    import hljsDefineSolidity from './lib/core/solidity.js'
     import markdown from './lib/mixins/markdown.js'
 
     var s_md_toolbar_left = require('./components/s-md-toolbar-left.vue')
@@ -243,8 +242,6 @@
             $vm.initExternalFuc();
             // 初始化语言
             this.initLanguage();
-            hljsDefineSolidity(hljs);
-
             this.$nextTick(() => {
                 // 初始化Textarea编辑开关
                 this.editableTextarea();

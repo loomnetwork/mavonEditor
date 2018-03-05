@@ -118,7 +118,7 @@ export const toolbar_left_click = (_type, $vm) => {
          'code': {
              prefix: '```',
              subfix: '\n\n```\n',
-             str: 'language'
+             str: 'solidity'
          },
          'table': {
              prefix: '',
