@@ -51,10 +51,10 @@
         <button :disabled="!editable" type="button" v-if="toolbars.link" @click.stop="$toggle_imgLinkAdd('link')"
                 class="op-icon"
                 :title="`${d_words.tl_link} (ctrl+l)`"><i class="fas fa-link"></i></button>
-        <button :disabled="!editable"
+        <div :disabled="!editable"
                 :class="{'selected': s_img_dropdown_open}"
                 type="button" v-if="toolbars.imagelink"
-                @click.stop="$click_toggle_image_dropdown()"><i class="far fa-image"></i></button>
+                @click.stop="$click_toggle_image_dropdown()"><i class="far fa-image"></i></div>
             <div  class="op-image popup-dropdown" v-show="s_img_dropdown_open">
                 <div  class="dropdown-item" @click.stop="$toggle_imgLinkAdd('imagelink')" title="ctrl+alt+l"><span>{{d_words.tl_image}}</span></div>
                 <div class="dropdown-item" style="overflow: hidden">

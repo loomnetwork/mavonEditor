@@ -100,7 +100,7 @@
     import {CONFIG} from './lib/config.js'
     import hljs from './lib/core/highlight.js'
     import markdown from './lib/mixins/markdown.js'
-
+    
     var s_md_toolbar_left = require('./components/s-md-toolbar-left.vue')
     var s_md_toolbar_right = require('./components/s-md-toolbar-right.vue')
     export default {
@@ -240,6 +240,7 @@
         created() {
             var $vm = this;
             $vm.initExternalFuc();
+
             // 初始化语言
             this.initLanguage();
             this.$nextTick(() => {
@@ -276,6 +277,7 @@
                 $vm.iRender();
             })
             $vm.codeStyleChange($vm.code_style, true)
+
         },
         beforeDestroy() {
             document.body.removeChild(this.$refs.help);

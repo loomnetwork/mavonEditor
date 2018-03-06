@@ -11,6 +11,8 @@ var markdown_config = {
     typographer: true,
     quotes: '“”‘’'
 }
+
+var hljsDefineSolidity = require('../core/hljs/solidity.js');
 var markdown = require('markdown-it')(markdown_config);
 // 表情
 var emoji = require('markdown-it-emoji');
@@ -53,16 +55,30 @@ var katex = require('markdown-it-katex-external');
 var miip = require('markdown-it-images-preview');
 var missLangs = {};
 var needLangs = [];
+
+var initSolidity = function(hljsInstance) {
+  if(!(hljsInstance.getLanguage('solidity'))) {
+    hljsDefineSolidity(hljsInstance);
+    hljsInstance.initHighlightingOnLoad();
+  }
+}
+
 var hljs_opts = {
     hljs: 'auto',
     highlighted: true,
     langCheck: function(lang) {
+
+        if(lang == 'solidity') {
+          initSolidity(window.hljs);
+        }
+
         if (lang && hljsLangs[lang] && !missLangs[lang]) {
             missLangs[lang] = 1;
             needLangs.push(lang)
         }
     }
 };
+
 markdown.use(mihe, hljs_opts)
     .use(emoji)
     .use(sup)
