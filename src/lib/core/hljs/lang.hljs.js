@@ -307,6 +307,7 @@ export default {
     'xhtml': 'xml',
     'rss': 'xml',
     'sol': 'solidity',
+    'solidity': 'solidity',
     'atom': 'xml',
     'xjb': 'xml',
     'xsd': 'xml',
