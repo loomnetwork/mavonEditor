@@ -53,7 +53,7 @@
                 :title="`${d_words.tl_link} (ctrl+l)`"><i class="fas fa-link"></i></button>
 
 
-        <div :disabled="!editable" :class="{'selected': s_img_dropdown_open}" type="button" v-if="toolbars.imagelink" @click.stop="$click_toggle_image_dropdown()"
+        <div :disabled="!editable" :class="{'selected': s_img_dropdown_open}" v-if="toolbars.imagelink" @click.stop="$click_toggle_image_dropdown()"
                 class="op-icon image-link dropdown"
                 aria-hidden="true">
             <i class="far fa-image"></i>
