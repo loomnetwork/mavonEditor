@@ -52,27 +52,26 @@
                 class="op-icon"
                 :title="`${d_words.tl_link} (ctrl+l)`"><i class="fas fa-link"></i></button>
 
-        <div :disabled="!editable"
-             :class="{'selected': s_img_dropdown_open}"
-             type="button" v-if="toolbars.imagelink"
-             @click.stop="$click_toggle_image_dropdown()"
-             class="op-icon dropdown"
-             aria-hidden="true">
-          <i class="far fa-image"></i>
-          <div  class="op-image popup-dropdown" v-show="s_img_dropdown_open">
-            <div  class="dropdown-item" @click.stop="$toggle_imgLinkAdd('imagelink')" title="ctrl+alt+l"><span>{{d_words.tl_image}}</span></div>
-            <div class="dropdown-item" style="overflow: hidden">
-              <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" @change="$imgAdd($event)" :key="img_file[0][0]" multiple="multiple"/>{{d_words.tl_upload}}
-            </div>
 
-            <div class="dropdown-item dropdown-images" v-if="index > 0" v-for="(item, index) in img_file" @click.stop="$imgFileListClick(index)">
-              <span>{{item[0]}}</span>
-              <button slot="right" type="button" @click.stop="$imgDel(index)" aria-hidden="true" :title="d_words.tl_upload_remove">
-                <i class="op-icon far fa-trash-alt"></i>
-              </button>
-              <img class = "image-show" :src="item[1].miniurl" alt="none">
+        <div :disabled="!editable" :class="{'selected': s_img_dropdown_open}" type="button" v-if="toolbars.imagelink" @click.stop="$click_toggle_image_dropdown()"
+                class="op-icon far fa-image dropdown"
+                aria-hidden="true">
+            <div  class="op-image popup-dropdown" v-show="s_img_dropdown_open">
+                <div  class="dropdown-item" @click.stop="$toggle_imgLinkAdd('imagelink')" title="ctrl+alt+l"><span>{{d_words.tl_image}}</span></div>
+                <div class="dropdown-item" style="overflow: hidden">
+                    <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" @change="$imgAdd($event)" :key="img_file[0][0]" multiple="multiple"/>{{d_words.tl_upload}}
+                </div>
+
+                <div class="dropdown-item dropdown-images" v-if="index > 0" v-for="(item, index) in img_file" @click.stop="$imgFileListClick(index)">
+                    <span>{{item[0]}}</span>
+                    <button slot="right" type="button" @click.stop="$imgDel(index)"
+                            class="op-icon far fa-trash-alt" aria-hidden="true"
+                            :title="d_words.tl_upload_remove"></button>
+                    <!-- 缩略图展示 -->
+                    <img class = "image-show" :src="item[1].miniurl" alt="none">
+                </div>
+
             </div>
-          </div>
         </div>
 
         <button :disabled="!editable" type="button" v-if="toolbars.code" @click="$clicks('code')"
@@ -246,7 +245,7 @@
     }
 </script>
 <style lang="stylus" scoped>
-    .op-icon.fa.fa-mavon-picture-o.dropdown
+    .op-icon.far.fa-image.dropdown
         position relative
         .popup-dropdown
             position absolute
