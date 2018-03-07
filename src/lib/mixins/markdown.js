@@ -67,7 +67,6 @@ var hljs_opts = {
     hljs: 'auto',
     highlighted: true,
     langCheck: function(lang) {
-        console.log(lang)
         if (lang && hljsLangs[lang] && !missLangs[lang]) {
             missLangs[lang] = 1;
             needLangs.push(lang)
