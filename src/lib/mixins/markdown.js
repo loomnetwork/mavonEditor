@@ -7,7 +7,7 @@ var markdown_config = {
     xhtmlOut: true,        // Use '/' to close single tags (<br />).
     breaks: true,        // Convert '\n' in paragraphs into <br>
     langPrefix: 'lang-',  // CSS language prefix for fenced blocks. Can be
-    linkify: false,        // 自动识别url
+    linkify: true,        // 自动识别url
     typographer: true,
     quotes: '“”‘’'
 }
