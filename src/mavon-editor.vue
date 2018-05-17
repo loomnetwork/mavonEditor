@@ -435,6 +435,9 @@
             getNavigation($vm, full) {
                 return getNavigation($vm, full);
             },
+            submit_content() {
+              this.$emit("submitContent");
+            },
             // @event
             // 修改数据触发 （val ， val_render）
             change(val, render) {

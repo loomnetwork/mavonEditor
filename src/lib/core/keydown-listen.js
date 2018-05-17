@@ -92,10 +92,11 @@ export const keydownListen = ($vm) => {
                 }
                 case KEY_CODE.ENTER: {
                 // enter
-                if ($vm.$refs.toolbar_left.s_img_link_open) {
-                    e.preventDefault()
-                    $vm.$refs.toolbar_left.$imgLinkAdd();
-                }
+                // if ($vm.$refs.toolbar_left.s_img_link_open) {
+                //     e.preventDefault()
+                //     $vm.$refs.toolbar_left.$imgLinkAdd();
+                // }
+                  $vm.submit_content();
                 break;
             }
             }
