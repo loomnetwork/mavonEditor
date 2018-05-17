@@ -92,11 +92,10 @@ export const keydownListen = ($vm) => {
                 }
                 case KEY_CODE.ENTER: {
                 // enter
-                // if ($vm.$refs.toolbar_left.s_img_link_open) {
-                //     e.preventDefault()
-                //     $vm.$refs.toolbar_left.$imgLinkAdd();
-                // }
-                  $vm.submit_content();
+                if ($vm.$refs.toolbar_left.s_img_link_open) {
+                    e.preventDefault()
+                    $vm.$refs.toolbar_left.$imgLinkAdd();
+                }
                 break;
             }
             }
@@ -180,6 +179,9 @@ export const keydownListen = ($vm) => {
                     e.preventDefault()
                     $vm.toolbar_left_click('trash')
                     break;
+                }
+                case KEY_CODE.ENTER: {
+                  $vm.submit_content();
                 }
             }
         } else if ((e.ctrlKey || e.metaKey) && e.altKey && !e.shiftKey) {
