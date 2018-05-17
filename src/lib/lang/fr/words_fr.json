@@ -26,7 +26,6 @@
   "tl_aligncenter": "Center le texte",
   "tl_alignleft": "Férer le texte à gauche",
   "tl_alignright": "Férer le texte à droite",
-  "tl_preview": "Previsualisé",
   "tl_edit": "Editer",
   "tl_single_column": "Seule Colonne",
   "tl_double_column": "Colonnes Doubles",
@@ -42,5 +41,6 @@
   "tl_popup_link_text": "Texte du lien",
   "tl_popup_link_addr": "Adresse de lien",
   "tl_popup_link_sure": "sûr",
-  "tl_popup_link_cancel": "Annuler"
+  "tl_popup_link_cancel": "Annuler",
+  "tl_add_image": "Insert Image"
 }

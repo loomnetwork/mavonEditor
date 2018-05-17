@@ -41,5 +41,6 @@
   "tl_popup_link_text": "Link text",
   "tl_popup_link_addr": "Link address",
   "tl_popup_link_sure": "Sure",
-  "tl_popup_link_cancel": "Cancel"
+  "tl_popup_link_cancel": "Cancel",
+  "tl_add_image": "Insert Image"
 }
