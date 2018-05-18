@@ -180,6 +180,9 @@ export const keydownListen = ($vm) => {
                     $vm.toolbar_left_click('trash')
                     break;
                 }
+                case KEY_CODE.ENTER: {
+                  $vm.submit_content();
+                }
             }
         } else if ((e.ctrlKey || e.metaKey) && e.altKey && !e.shiftKey) {
             // ctrl + alt +
